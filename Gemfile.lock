@@ -209,8 +209,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
-  dry-monads
-  dry-schema
+  dry-monads (~> 1.4.0)
+  dry-schema (~> 1.9.2)
   puma (~> 5.0)
   rails (~> 7.0.3)
   rspec-rails (~> 5.1.2)
