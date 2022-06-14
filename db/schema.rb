@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_14_135109) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_174310) do
+  create_table "plans", force: :cascade do |t|
+    t.string "name"
+    t.integer "price_in_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.text "address"
     t.string "zip_code"
-    t.string "plan_id"
     t.string "payment_token"
     t.date "next_billing_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "plan_id", null: false
+    t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
   end
 
+  add_foreign_key "subscriptions", "plans"
 end
