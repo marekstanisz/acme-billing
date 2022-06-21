@@ -1,6 +1,6 @@
 require 'dry/monads'
 require 'dry/monads/do'
-require 'dry'
+require 'dry-schema'
 
 module Subscriptions
   class Create

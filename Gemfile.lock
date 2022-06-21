@@ -106,6 +106,10 @@ GEM
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
     erubi (1.10.0)
+    faraday (2.3.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.3)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -192,6 +196,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    ruby2_keywords (0.0.5)
     sqlite3 (1.4.3)
     strscan (3.0.3)
     thor (1.2.1)
@@ -205,12 +210,14 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-21
 
 DEPENDENCIES
   bootsnap
   debug
   dry-monads (~> 1.4.0)
   dry-schema (~> 1.9.2)
+  faraday (~> 2.3.0)
   puma (~> 5.0)
   rails (~> 7.0.3)
   rspec-rails (~> 5.1.2)
@@ -218,7 +225,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.2.8
