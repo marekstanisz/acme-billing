@@ -6,7 +6,7 @@ module Billing
 
     def call
       perform_request
-      parse_response
+      token
     end
 
     private
@@ -21,7 +21,8 @@ module Billing
       @response = Fakepay::Purchase.post(params)
     end
 
-    def parse_response
+    def token
+      @token ||= response['token']
     end
   end
 end

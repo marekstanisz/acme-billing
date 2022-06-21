@@ -53,6 +53,10 @@ module Subscriptions
       payment_token = Billing::Charge.new(plan, billing_params).call
 
       Success(payment_token)
+    rescue Fakepay::ConnectionError => e
+      return Failure(e.message) if e.message.present?
+
+      Failure('Payment gateway error, please try again later')
     end
 
     def create_subscription(payment_token, subscription_params)

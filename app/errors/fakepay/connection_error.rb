@@ -1,9 +1,9 @@
 module Fakepay
   class ConnectionError < StandardError
-    attr_reader :status
+    attr_reader :message
     
-    def initialize(status:)
-      @status = status
+    def initialize(message:)
+      @message = message
     end
   end
 end
